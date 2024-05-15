@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Coding Quiz</title>
+    <link rel="stylesheet" href="./assets/css/style.css" />
+</head>
+
+<body>
+    <header>
+        <div class="scores">
+            <a id="highscores-link" href="#">View high scores</a>
+        </div>
+        <div id="timer" class="timer">
+            Time: 75
+        </div>
+        <div class="home-btn-container">
+            <button id="home-btn">Home</button>
+        </div>
+    </header>
+
+    <section id="start-container" class="start-quiz">
+        <h1>Multiple Choice Coding Quiz</h1>
+        <p>
+            For this quiz, you will have a total of 75 seconds to try to get the highest score by answering five
+            series of questions. Incorrect answers will penalize your time by ten seconds. Your total score will be your time after you
+            answer the last question. Click on the "Start Quiz" button to begin.
+        </p>
+        <div class="controls">
+            <button id="start-btn" class="start-btn">Start Quiz</button>
+        </div>
+    </section>
+
+    <section id="question-container" class="hide">
+        <h1 id="question">Question</h1>
+        <div id="answer-buttons" class="btn-grid">
+            <button class="btn">Answer 1</button>
+            <button class="btn">Answer 2</button>
+            <button class="btn">Answer 3</button>
+            <button class="btn">Answer 4</button>
+        </div>
+        <h2 id="check-answer" class="correct-wrong hide"></h2> <!-- Feedback text -->
+        <div class="controls">
+            <button id="next-btn" class="next-btn hide">Next</button>
+        </div>
+    </section>
+
+    <section id="score-container" class="hide">
+        <form id="submit-form">
+            <h3 id="your-score"></h3>
+            <label id="initials-label" for="initials-field">Enter your initials to save the score:</label>
+            <input type="text" id="initials-field" maxlength="3" placeholder="Enter your initials" />
+            <button type="submit" id="submit-btn">Submit</button>
+        </form>
+    </section>
+
+    <section id="highscores" class="highscores-container hide">
+        <div id="high-scores">
+            <h1 class="centered">Leaderboard</h1>
+            <div id="highscore" class="highscore highscore-list">
+            </div>
+            <div class="controls">
+                <button id="restart-btn">Restart</button>
+                <button id="clear-btn">Clear Scores</button>
+            </div>
+        </div>
+    </section>
+
+    <script src="./assets/js/questions.js"></script>
+    <script src="./assets/js/logic.js"></script>
+
+    <script>
+        document.getElementById("home-btn").addEventListener("click", function() {
+            window.location.href = "index.html";
+        });
+    </script>
+</body>
+
+</html>
